@@ -6,18 +6,8 @@ var key = document.getElementById("key").value;
 var message = document.getElementById("message").value;
 var result = document.getElementById("result");
 var copyBtn = document.getElementById('copy-content');
-var pastBtn = document.getElementById('past-content');
 var deleteBtn = document.getElementById('delete-content');
 
-pastBtn.addEventListener('click', async () => {
-    try {
-        const text = await navigator.clipboard.readText();
-        message.value = text;
-        console.log('Content past from clipboard', text);
-      } catch (err) {
-        console.error('Failed to past: ', err);
-      }
-});
 
 deleteBtn.addEventListener('click', () => {
     message.value = '';
