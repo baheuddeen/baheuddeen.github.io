@@ -1,7 +1,7 @@
 
 var cipher = document.getElementById("cipher");
 var decipher = document.getElementById("decipher");
-
+/** test */
 var key = document.getElementById("key").value;
 var message = document.getElementById("message").value;
 var result = document.getElementById("result");
