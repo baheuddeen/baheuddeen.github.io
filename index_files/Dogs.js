@@ -13,7 +13,7 @@ pastBtn.addEventListener('click', async () => {
     try {
         const text = await navigator.clipboard.readText();
         message.value = text;
-        console.log('Content past from clipboard');
+        console.log('Content past from clipboard', text);
       } catch (err) {
         console.error('Failed to past: ', err);
       }
