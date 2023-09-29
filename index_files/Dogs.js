@@ -5,13 +5,28 @@ var decipher = document.getElementById("decipher");
 var key = document.getElementById("key").value;
 var message = document.getElementById("message").value;
 var result = document.getElementById("result");
+var copyBtn = document.getElementById('copy-content');
+var deleteBtn = document.getElementById('delete-content');
 
+deleteBtn.addEventListener('click', () => {
+    message.value = '';
+    result.value = '';
+});
+
+copyBtn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(result.value);
+      console.log('Content copied to clipboard');
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+});
 
 cipher.addEventListener("click",ciphering)
 function ciphering(){
 
-    var key = document.getElementById("key").value;
-    var message = document.getElementById("message").value;
+    var key = document.getElementById("key").value.trim();
+    var message = document.getElementById("message").value.trim();
     
     if (validation()){   
 
